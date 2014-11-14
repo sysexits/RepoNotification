@@ -46,4 +46,5 @@ while read folder; do
 		done < "./.repos"
 	fi
 	printf "%s\n" "${hashes[@]}" > ".hashes"
+	unset hashes
 done < "./.folders"
