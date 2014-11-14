@@ -9,7 +9,7 @@ InitialNoti() {
 		/usr/bin/osascript -e "display notification \"need to update\" with title \"$1\" subtitle \"$RESLOG\""
 		echo $RESLOG
 	else
-		echo "_"
+		echo ""
 	fi
 }
 
@@ -18,15 +18,14 @@ Notification() {
 	git --git-dir=$1$GITFILE fetch origin
 	RESLOG=$(git --git-dir=$1$GITFILE log HEAD..origin/master --oneline)
 	if [[ $RESLOG=$2 ]]; then
-		echo "_"
+		echo $RESLOG 
 	else
 		if [[ "${RESLOG}" != "" ]]; then
 			/usr/bin/osascript -e "display notification \"need to update\" with title \"$1\" subtitle \"$RESLOG\""
 			echo $RESLOG
 		else
-			echo "_"
+			echo ""
 		fi
-
 	fi
 }
 
