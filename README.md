@@ -1,13 +1,19 @@
-# Git Repository Notification (Mac only)
+# Git Repository Notification
 
 A Simple Notification Manager for git repositories.
 You should register this shell script on crontab.
 This script does not permit space for directory names.
 
+# files
+* update.sh - for Mac OSX
+* update_telegram_cli.sh - you can use any system which has telegram-cli binary.
+
 # Usage
 
 Ex)
 ```
+├── A's .repos
+├── A's .hashes (if .repos is changed, you should remove this file manually)
 ├── A
 │   ├── Repository_1
 │   ├── Repository_2
